@@ -18,7 +18,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public RecyclerViewAdapter(List<CurrencyData> mRatesData) {
         mDataset = mRatesData;
-        Log.d(TAG, "Dataset size: " + mRatesData.size());
+        Log.d(TAG, "Dataset size: " + mDataset.size());
     }
 
     @Override
@@ -32,8 +32,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mTextView.setText(mDataset.get(position).getSymbol() + "- BUY: " + mDataset.get(position).getBuy().toString() +
-                mDataset.get(position).getSymbol() + "/SELL: " + mDataset.get(position).getSell().toString() + mDataset.get(position).getSymbol());
+        holder.mTextView.setText(mDataset.get(position).getSymbol() + "- BUY: " + mDataset.get(position).getSymbol() + mDataset.get(position).getBuy().toString() +
+                "/SELL: " + mDataset.get(position).getSymbol() + mDataset.get(position).getSell().toString());
+
     }
 
     @Override

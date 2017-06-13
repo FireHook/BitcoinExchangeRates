@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity{
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         mRatesData = new ArrayList<>();
-        recyclerViewAdapter = new RecyclerViewAdapter(mRatesData);
-        recyclerView.setAdapter(recyclerViewAdapter);
 
         API apiService = ApiClient.getClient().create(API.class);
         Call<Rates> rates = apiService.getCurrenciesRates();
@@ -64,8 +62,9 @@ public class MainActivity extends AppCompatActivity{
                     mRatesData.add(r.twd);
 
 
-                    recyclerViewAdapter.notifyDataSetChanged();
-                    //recyclerView.invalidate();
+                    recyclerViewAdapter = new RecyclerViewAdapter(mRatesData);
+                    recyclerView.setAdapter(recyclerViewAdapter);
+
                 }
             }
 
