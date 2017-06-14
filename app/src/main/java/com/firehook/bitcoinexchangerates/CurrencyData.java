@@ -1,9 +1,18 @@
 package com.firehook.bitcoinexchangerates;
 
+import android.util.Log;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class CurrencyData {
+
+    public String currencyName;
+
+    public CurrencyData() {
+        currencyName = this.getClass().getSimpleName();
+        Log.d("----->Rates data: ", currencyName);
+    }
 
     @SerializedName("15m")
     @Expose

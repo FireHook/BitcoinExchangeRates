@@ -1,6 +1,7 @@
 package com.firehook.bitcoinexchangerates;
 
 
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -32,6 +33,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        if (position != 0){
+            holder.mTextView.setTypeface(null, Typeface.NORMAL);
+            holder.mTextView.setTextSize(16);
+        }else {
+            holder.mTextView.setTypeface(null, Typeface.BOLD);
+            holder.mTextView.setTextSize(20);
+        }
         holder.mTextView.setText(mDataset.get(position).getSymbol() + "- BUY: " + mDataset.get(position).getSymbol() + mDataset.get(position).getBuy().toString() +
                 "/SELL: " + mDataset.get(position).getSymbol() + mDataset.get(position).getSell().toString());
 
