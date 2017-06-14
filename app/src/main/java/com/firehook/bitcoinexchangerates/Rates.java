@@ -8,15 +8,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class Rates {
 
-    public String currencyName;
-
-    public Rates() {
-        currencyName = this.getClass().getSimpleName();
-        Log.d("----->Rates data: ", currencyName);
-    }
-
-
-
     @SerializedName("USD")
     @Expose
     public CurrencyData usd;

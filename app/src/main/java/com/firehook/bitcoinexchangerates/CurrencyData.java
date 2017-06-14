@@ -7,13 +7,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class CurrencyData {
 
-    public String currencyName;
-
-    public CurrencyData() {
-        currencyName = this.getClass().getSimpleName();
-        Log.d("----->Rates data: ", currencyName);
-    }
-
     @SerializedName("15m")
     @Expose
     private Double _15m;
